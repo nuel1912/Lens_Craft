@@ -1,0 +1,23 @@
+.gallery {
+  margin: 80px auto;
+  width: 90%;
+  text-align: center;
+}
+
+.pics {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.pics img {
+  width: 100%;
+}
+
+/* ----- Media Query ----- */
+/* @media (max-width: 800px){
+  .pics img {
+    flex-wrap: wrap;
+  }
+} */
