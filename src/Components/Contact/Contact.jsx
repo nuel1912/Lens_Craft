@@ -10,24 +10,24 @@ import location from "../../assets/location.png"
 import arrow_right from "../../assets/arrow-right.png"
 
 const Contact = () => {
-  const form = useRef();
+  // const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
-    emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-        publicKey: 'YOUR_PUBLIC_KEY',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
+  //   emailjs
+  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+  //       publicKey: 'YOUR_PUBLIC_KEY',
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log('SUCCESS!');
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       },
+  //     );
+  // };
 
   return (
     <div className='contact'>
@@ -55,7 +55,7 @@ const Contact = () => {
         </ul>
       </div>
       <div className='contact-col'>
-        <form onSubmit={onSubmit}>
+        <form>
           <label>Your Name</label>
           <input type='text' name='name' placeholder='Please enter your name...' required />
           <label>Phone Number</label>
@@ -67,7 +67,7 @@ const Contact = () => {
             <img src={arrow_right} alt='Pointer arrow' className='arrow-right' />
           </button>
         </form>
-        <span>{result}</span>
+        <span></span>
       </div>
     </div>
   )

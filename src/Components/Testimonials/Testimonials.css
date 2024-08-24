@@ -68,7 +68,7 @@
   }
   .slide {
     padding: 12px;
-    height: 42vh;
+    height: 24vh;
   }
   .slide img {
     width: 48px;
@@ -77,6 +77,13 @@
 }
 
 @media (max-width: 600px){
+  .prev-btn, .next-btn {
+    display: none;
+  }
+  .slide {
+    padding: 12px;
+    height: 36vh;
+  }
   .user-info {
     font-size: 12px;
     display: block;
@@ -84,6 +91,9 @@
   }
   .user-info h3 {
     font-size: 16px;
+  }
+  .slider ul {
+    flex-direction: column;
   }
   .slider p {
     font-size: 12px;

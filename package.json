@@ -1,13 +1,13 @@
 {
-  "homepage": "https://nuel1912.github.io/Lens_Craft",
+  "homepage": "https://nuel1912.github.io/Lens_Craft/",
   "name": "lens_craft",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
