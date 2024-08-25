@@ -10,24 +10,30 @@ import location from "../../assets/location.png"
 import arrow_right from "../../assets/arrow-right.png"
 
 const Contact = () => {
-  // const form = useRef();
+  const [result, setResult] = React.useState("");
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  //   emailjs
-  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-  //       publicKey: 'YOUR_PUBLIC_KEY',
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log('SUCCESS!');
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       },
-  //     );
-  // };
+    formData.append("access_key", "de78e30a-7a28-451e-a61e-86c80c43c1ba");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message Sent Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
 
   return (
     <div className='contact'>
@@ -55,7 +61,7 @@ const Contact = () => {
         </ul>
       </div>
       <div className='contact-col'>
-        <form>
+        <form onSubmit={onSubmit}>
           <label>Your Name</label>
           <input type='text' name='name' placeholder='Please enter your name...' required />
           <label>Phone Number</label>
@@ -67,7 +73,7 @@ const Contact = () => {
             <img src={arrow_right} alt='Pointer arrow' className='arrow-right' />
           </button>
         </form>
-        <span></span>
+        <span>{result}</span>
       </div>
     </div>
   )
