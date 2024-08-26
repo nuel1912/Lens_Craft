@@ -33,7 +33,7 @@ LensCraft is a professional photography portfolio website built using **React.js
    ```
 4. Start the development server:
    ```bash
-   npm start
+   npm start or npm run dev
    ```
 5. Open your browser and go to `http://localhost:3000` to view the website locally or view the deployed site here `https://nuel1912.github.io/Lens_Craft/`.
 
